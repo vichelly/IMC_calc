@@ -1,13 +1,16 @@
 import { useState } from 'react'
 import * as S from './styles'
+import { levels, calculateBmi, level } from 'helpers/bmi';
+import GridItem from 'components/GridItem';
 
 const Content = () => {
   const [heightField, setHeightField] = useState<number>(0);
   const [weightField, setWeightField] = useState<number>(0);
+  const [toShow, setToShow] = useState<level | null>(null);
 
   const handleCalculateButton = () => {
     if(heightField && weightField){
-
+      setToShow(calculateBmi(heightField,weightField));
     }else{
       alert("Digite todos os campos.")
     }
@@ -19,24 +22,42 @@ const Content = () => {
     <S.Container>
         <S.DivContent>
             <S.LeftDiv>
+              <br /> 
                 <h1>Calculate your BMI</h1>
-                <br /> <br />
+                <br /> <br /> <br /> <br />
                 <input 
                   type="number" 
                   value={heightField > 0 ? heightField : ''} 
                   onChange={e => setHeightField(parseFloat(e.target.value))}
                   placeholder="Enter your height (in meters)"
                 />
+                <br /> <br /> <br />
                 <input 
                   type="number" 
                   value={weightField > 0 ? weightField : ''} 
                   onChange={e => setWeightField(parseFloat(e.target.value))}
                   placeholder="Enter your weight (in kilograms)"
                 />
+                <br /> <br /> <br />
                 <button onClick={handleCalculateButton} >Calculate</button>
             </S.LeftDiv>
             <S.RightDiv>
-                adfasdf
+              {! toShow && 
+                <S.Grid>
+                  {levels.map((item,key)=>(
+                  <GridItem key={key} item={item} />
+                  )
+                  )}
+                </S.Grid>
+              }
+              {toShow &&
+                <S.rightBig>
+                  <S.rightArrow>
+
+                  </S.rightArrow>
+                  <GridItem item={toShow} />
+                </S.rightBig>
+              }
             </S.RightDiv>
         </S.DivContent>
     </S.Container>

@@ -9,6 +9,7 @@ export const DivContent = styled.div`
   display: flex;
   color: ${theme.colors.tone4};
 `
+
 export const LeftDiv = styled.div`
   flex: 1;
   margin-right: 40px;
@@ -37,7 +38,21 @@ export const LeftDiv = styled.div`
     opacity: 0.8;
   }
 `
+
+
 export const RightDiv = styled.div` 
   flex: 1;
   margin-left: 40px;
+  display: flex;
 `
+
+export const Grid = styled.div`
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+`
+
+export const rightArrow = styled.div``
+
+export const rightBig = styled.div``
