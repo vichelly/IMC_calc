@@ -17,6 +17,9 @@ export default function GridItem({item}:Props) {
             </h2>
         </S.gridIcon>
         <S.gridTitle>{item.title}</S.gridTitle>
+        {item.yourBmi && 
+            <S.yourBMI> your BMI is {item.yourBmi} kg/m² </S.yourBMI>
+        }
         <S.gridInfo>
             <>
                 BMI is between <strong>{item.bmi[0]}</strong> and <strong>{item.bmi[1]}</strong>

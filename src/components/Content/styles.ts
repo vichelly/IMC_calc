@@ -55,4 +55,8 @@ export const Grid = styled.div`
 
 export const rightArrow = styled.div``
 
-export const rightBig = styled.div``
+export const rightBig = styled.div`
+  flex: 1;
+  display: flex;
+  
+`
