@@ -16,6 +16,12 @@ const Content = () => {
     }
   }
 
+  const handleBackButton = () => {
+    setToShow(null);
+    setHeightField(0);
+    setWeightField(0);
+  }
+
   return(
 
   <>
@@ -52,8 +58,8 @@ const Content = () => {
               }
               {toShow &&
                 <S.rightBig>
-                  <S.rightArrow>
-
+                  <S.rightArrow onClick={handleBackButton} >
+                     back
                   </S.rightArrow>
                   <GridItem item={toShow} />
                 </S.rightBig>

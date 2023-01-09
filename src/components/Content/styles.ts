@@ -53,10 +53,24 @@ export const Grid = styled.div`
   gap: 20px;
 `
 
-export const rightArrow = styled.div``
+export const rightArrow = styled.div`
+  position: absolute;
+  color: ${theme.colors.tone1};
+  border-radius: 3px;
+  background-color: ${theme.colors.tone5};
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: -15px;
+  margin-top: -10px;
+  padding: 0 4px 0 4px;
+  transition: all ease .3s;
+  :hover{
+    opacity: .9;
+  }
+`
 
 export const rightBig = styled.div`
   flex: 1;
   display: flex;
-  
+
 `
