@@ -37,6 +37,13 @@ export const LeftDiv = styled.div`
   button:hover{
     opacity: 0.8;
   }
+
+  button:disabled{
+    opacity: .5;
+  }
+  input:disabled{
+    opacity: .5;
+  }
 `
 
 
