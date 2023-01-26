@@ -34,7 +34,7 @@ export const gridInfo = styled.div`
   font-size: 10px;
   margin-top: 14px;
 `
-export const yourBMI= styled.div`
+export const yourBMI = styled.div`
   font-size: 17px;
   margin: 10px 0 50px 0;
 `
